@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'de.haya'
+version = 'v0.1.0'
+
+ext {
+    mainClassName = 'de.haya.tloy.core.Game'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.joml:joml:1.10.5'
+    implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
+}
+
+application {
+    mainClass = mainClassName
+}
+
+processResources {
+    filesMatching('version.properties') {
+        expand(version: project.version)
+    }
+}
