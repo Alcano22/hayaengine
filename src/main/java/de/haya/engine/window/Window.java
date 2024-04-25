@@ -1,9 +1,11 @@
 package de.haya.engine.window;
 
 import de.haya.engine.input.Input;
+import de.haya.engine.input.KeyCode;
 import de.haya.engine.scene.SceneManager;
 import de.haya.engine.util.Time;
 import de.haya.engine.util.Version;
+import org.joml.Vector2f;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,11 +14,13 @@ import java.awt.image.BufferStrategy;
 public class Window extends JFrame {
 
     private final Canvas rootCanvas;
+    private final WindowDebugInfo debugInfo;
 
     public Window(String title) {
         super(title);
 
         this.rootCanvas = new Canvas();
+        this.debugInfo = new WindowDebugInfo(new Vector2f(25f, 25f));
     }
 
     public void run() {
@@ -41,6 +45,8 @@ public class Window extends JFrame {
 
     public void update() {
         this.requestFocus();
+
+        this.debugInfo.update();
     }
 
     public void render() {
@@ -58,19 +64,11 @@ public class Window extends JFrame {
 
             SceneManager.render(gfx);
 
-            this.renderDebugInfo(gfx);
+            this.debugInfo.render(gfx);
 
             bs.show();
         } finally {
             gfx.dispose();
         }
-    }
-
-    private void renderDebugInfo(Graphics gfx) {
-        gfx.setColor(Color.YELLOW);
-        gfx.setFont(gfx.getFont().deriveFont(14f));
-        gfx.drawString("The Legend of Yan", 25, 25);
-        gfx.drawString("Running on " + Version.get() + "!", 25, 25 + gfx.getFont().getSize() + 5);
-        gfx.drawString(Time.fps + " FPS", 25, 25 + gfx.getFont().getSize() * 2 + 10);
     }
 }

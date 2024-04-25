@@ -1,7 +1,7 @@
 package de.haya.engine.gameobject.component;
 
 import de.haya.engine.core.Engine;
-import de.haya.engine.tilemap.Tilemap;
+import de.haya.engine.scene.Tilemap;
 import de.haya.engine.window.Window;
 import org.joml.Vector2f;
 

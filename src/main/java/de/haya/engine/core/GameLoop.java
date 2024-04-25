@@ -8,11 +8,15 @@ public class GameLoop {
     private final Engine engine;
     private final Thread thread;
 
-    private boolean running;
-    private int frames = 0;
+    public boolean limitFPS;
+    public int targetFPS;
 
-    public GameLoop(Engine engine) {
+    private boolean running;
+
+    public GameLoop(Engine engine, boolean limitFPS, int targetFPS) {
         this.engine = engine;
+        this.limitFPS = limitFPS;
+        this.targetFPS = targetFPS;
 
         this.thread = new Thread(this::loop);
     }
@@ -32,40 +36,22 @@ public class GameLoop {
     }
 
     public synchronized void loop() {
-        long last = System.nanoTime();
-        double deltaTime = 0f;
-
-        long timer = System.currentTimeMillis();
+        float drawInterval = 1f / this.targetFPS;
+        float last = Time.getTime();
+        float current;
+        float deltaTime = 0f;
 
         while (this.running) {
-            long now = System.nanoTime();
+            current = Time.getTime();
+            deltaTime += (current - last) / drawInterval;
+            last = current;
 
-            if (Time.isFPSLimited) {
-                double tickDuration = 1_000_000_000f / Time.fpsLimit;
-                deltaTime += (now - last) / tickDuration;
-            } else
-                deltaTime = 1;
+            Time.deltaTime = deltaTime;
 
-            last = now;
-
-            boolean renderNextFrame = false;
-
-            while (deltaTime >= 1f) {
-                Time.deltaTime = (float) deltaTime;
-                engine.update();
-                deltaTime--;
-                renderNextFrame = true;
-            }
-
-            if (renderNextFrame) {
+            if (deltaTime >= 1f) {
+                this.engine.update();
                 this.engine.render();
-                this.frames++;
-            }
-
-            if (System.currentTimeMillis() - timer > 1000) {
-                Time.fps = this.frames;
-                this.frames = 0;
-                timer += 1000;
+                deltaTime--;
             }
         }
 

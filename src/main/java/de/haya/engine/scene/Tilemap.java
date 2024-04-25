@@ -1,4 +1,4 @@
-package de.haya.engine.tilemap;
+package de.haya.engine.scene;
 
 import de.haya.engine.logging.Log;
 import org.w3c.dom.Document;
@@ -17,8 +17,6 @@ import java.io.IOException;
 public class Tilemap {
 
 	private final String filepath;
-
-	public float scale = 1f;
 
 	private int width, height;
 	private int[] data;
@@ -48,7 +46,6 @@ public class Tilemap {
 				if (dataNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element dataElement = (Element) dataNode;
 					String csvData = dataElement.getTextContent().replaceAll("\\s+", "");
-					Log.debug(csvData);
 
 					String[] splitCSVData = csvData.split(",");
 					this.data = new int[splitCSVData.length];
@@ -62,13 +59,9 @@ public class Tilemap {
 				Element tilesetElement = (Element) tilesetNode;
 				int firstGid = Integer.parseInt(tilesetElement.getAttribute("firstgid"));
 				String source = tilesetElement.getAttribute("source");
-				Log.debug("Tileset First GID: %d", firstGid);
-				Log.debug("Tileset Source: {}", source);
 
 				String tsxPath = file.getParent() + "/" + source;
-				Log.debug("Tileset Path: {}", tsxPath);
 				File tsxFile = new File(tsxPath);
-				Log.debug("Tileset Source exists: {}", tsxFile.exists());
 
 				Document tsxDoc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(tsxFile);
 				doc.getDocumentElement().normalize();
@@ -98,12 +91,6 @@ public class Tilemap {
 	}
 
 	private void loadTilemap(String imagePath, int tileWidth, int tileHeight, int rows, int columns) {
-		Log.debug("Data Length: " + this.data.length);
-		Log.debug("Tile Width: " + tileWidth);
-		Log.debug("Tile Height: " + tileHeight);
-		Log.debug("Rows: " + rows);
-		Log.debug("Columns: " + columns);
-
 		this.tilemap = new BufferedImage(this.width * tileWidth, this.height * tileHeight, BufferedImage.TYPE_INT_ARGB);
 		Graphics tilemapGFX = this.tilemap.createGraphics();
 

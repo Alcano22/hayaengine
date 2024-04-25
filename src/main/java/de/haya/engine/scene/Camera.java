@@ -1,31 +1,23 @@
 package de.haya.engine.scene;
 
 import org.joml.Vector2f;
+import org.joml.Vector2i;
 
 public class Camera {
 
-    private Vector2f position;
-    private float size;
+    public Vector2f position;
+    public int pixelsPerUnit;
 
-    public Camera(Vector2f position, float size) {
+    public Camera(Vector2f position, int pixelsPerUnit) {
         this.position = position;
-        this.size = size;
+        this.pixelsPerUnit = pixelsPerUnit;
     }
 
-    public Camera(float size) {
-        this.position = new Vector2f(0f, 0f);
-        this.size = size;
+    public Vector2i translate(Vector2f worldPos) {
+        worldPos.mul(this.pixelsPerUnit).sub(this.position);
+        int screenX = (int) worldPos.x;
+        int screenY = (int) worldPos.y;
+        return new Vector2i(screenX, screenY);
     }
 
-    public Vector2f translate(Vector2f vec2f) {
-        return vec2f.mul(size).sub(position);
-    }
-
-    public Vector2f getPosition() {
-        return position;
-    }
-
-    public float getSize() {
-        return size;
-    }
 }

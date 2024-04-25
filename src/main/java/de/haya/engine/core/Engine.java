@@ -1,6 +1,7 @@
 package de.haya.engine.core;
 
 import de.haya.engine.api.GameAPI;
+import de.haya.engine.api.WindowProps;
 import de.haya.engine.input.Input;
 import de.haya.engine.scene.SceneManager;
 import de.haya.engine.window.Window;
@@ -19,12 +20,12 @@ public class Engine {
 
         this.game = game;
 
-        GameAPI.Props props = this.game.getProps();
+        WindowProps props = this.game.getWindowProps();
 
         this.window = new Window(props.title());
         this.window.run();
 
-        this.loop = new GameLoop(this);
+        this.loop = new GameLoop(this, props.limitFPS(), props.targetFPS());
 
         this.game.init();
     }
