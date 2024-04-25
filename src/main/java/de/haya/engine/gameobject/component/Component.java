@@ -1,7 +1,9 @@
-package de.haya.tloy.gameobject.component;
+package de.haya.engine.gameobject.component;
 
-import de.haya.tloy.gameobject.GameObject;
-import de.haya.tloy.gameobject.Transform;
+import de.haya.engine.gameobject.GameObject;
+import de.haya.engine.gameobject.Transform;
+
+import java.awt.*;
 
 public abstract class Component {
 
@@ -9,6 +11,7 @@ public abstract class Component {
 
     public void start() {}
     public void update() {}
+    public void render(Graphics gfx) {}
 
     public Transform transform() {
         return gameObject.transform;

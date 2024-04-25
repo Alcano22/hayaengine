@@ -1,4 +1,6 @@
-package de.haya.tloy.scene;
+package de.haya.engine.scene;
+
+import java.awt.*;
 
 public final class SceneManager {
 
@@ -9,6 +11,10 @@ public final class SceneManager {
     public static void update() {
         currentScene.update();
     }
+
+    public static void render(Graphics gfx) {
+		currentScene.render(gfx);
+	}
 
     public static void loadScene(Scene scene) {
         scene.start();

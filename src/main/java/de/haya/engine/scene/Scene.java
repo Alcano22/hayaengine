@@ -1,13 +1,19 @@
-package de.haya.tloy.scene;
+package de.haya.engine.scene;
 
-import de.haya.tloy.gameobject.GameObject;
+import de.haya.engine.gameobject.GameObject;
+import de.haya.engine.tilemap.Tilemap;
 
+import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Scene {
 
     private final List<GameObject> gameObjects;
+
+    boolean renderTilemap1 = true;
+
+    public Tilemap tilemap;
 
     public Scene() {
         this.gameObjects = new LinkedList<>();
@@ -19,6 +25,10 @@ public class Scene {
 
     public void update() {
         gameObjects.forEach(GameObject::update);
+    }
+
+    public void render(Graphics gfx) {
+        gameObjects.forEach(gameObject -> gameObject.render(gfx));
     }
 
     public void addGameObject(GameObject gameObject) {

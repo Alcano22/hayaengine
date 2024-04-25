@@ -1,6 +1,6 @@
-package de.haya.tloy.gameobject;
+package de.haya.engine.gameobject;
 
-import de.haya.tloy.util.Mathf;
+import de.haya.engine.util.Mathf;
 import org.joml.Math;
 import org.joml.Vector2f;
 

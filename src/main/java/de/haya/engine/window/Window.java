@@ -1,7 +1,9 @@
-package de.haya.tloy.window;
+package de.haya.engine.window;
 
-import de.haya.tloy.util.Time;
-import de.haya.tloy.util.Version;
+import de.haya.engine.input.Input;
+import de.haya.engine.scene.SceneManager;
+import de.haya.engine.util.Time;
+import de.haya.engine.util.Version;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,13 +11,10 @@ import java.awt.image.BufferStrategy;
 
 public class Window extends JFrame {
 
-    private static final int WIDTH = 1024, HEIGHT = 720;
-    private static final String TITLE = "The Legend of Yan | " + Version.get();
-
     private final Canvas rootCanvas;
 
-    public Window() {
-        super(TITLE);
+    public Window(String title) {
+        super(title);
 
         this.rootCanvas = new Canvas();
     }
@@ -31,9 +30,17 @@ public class Window extends JFrame {
         this.add(this.rootCanvas);
         this.pack();
 
+        Input input = Input.get();
+        this.addKeyListener(input.getKeyboard());
+        this.addMouseListener(input.getMouse());
+
         this.setLocationRelativeTo(null);
 
         this.setVisible(true);
+    }
+
+    public void update() {
+        this.requestFocus();
     }
 
     public void render() {
@@ -44,16 +51,19 @@ public class Window extends JFrame {
         }
 
         Graphics gfx = bs.getDrawGraphics();
+
         try {
             gfx.setColor(Color.BLACK);
             gfx.fillRect(0, 0, this.getWidth(), this.getHeight());
 
+            SceneManager.render(gfx);
+
             this.renderDebugInfo(gfx);
+
+            bs.show();
         } finally {
             gfx.dispose();
         }
-
-        bs.show();
     }
 
     private void renderDebugInfo(Graphics gfx) {

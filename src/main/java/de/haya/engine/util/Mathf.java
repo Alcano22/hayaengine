@@ -1,9 +1,11 @@
-package de.haya.tloy.util;
+package de.haya.engine.util;
 
 import org.joml.Math;
 import org.joml.Vector2f;
 
-public class Mathf {
+public final class Mathf extends Math {
+
+    private Mathf() {}
 
     public static Vector2f atd(float angle) {
         float x = Math.cos(Math.toRadians(angle));

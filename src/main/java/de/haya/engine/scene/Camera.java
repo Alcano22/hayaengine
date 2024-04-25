@@ -1,4 +1,4 @@
-package de.haya.tloy.scene;
+package de.haya.engine.scene;
 
 import org.joml.Vector2f;
 
