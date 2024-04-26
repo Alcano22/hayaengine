@@ -2,7 +2,10 @@ package de.haya.engine.resources;
 
 import de.haya.engine.logging.Log;
 
+import javax.imageio.ImageIO;
+import javax.sound.sampled.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -13,6 +16,8 @@ public final class AssetPool {
 
 	private static final Map<String, File> FILES = new HashMap<>();
 	private static final Map<String, Font> FONTS = new HashMap<>();
+	private static final Map<String, BufferedImage> TEXTURES = new HashMap<>();
+	private static final Map<String, Clip> SOUNDS = new HashMap<>();
 
 	private AssetPool() {}
 
@@ -52,6 +57,41 @@ public final class AssetPool {
         } catch (FontFormatException | IOException e) {
             Log.error(e);
         }
+
+		return null;
+    }
+
+	public static BufferedImage loadTexture(String filepath) {
+		if (TEXTURES.containsKey(filepath))
+			return TEXTURES.get(filepath);
+
+		try {
+			BufferedImage texture = ImageIO.read(new File(filepath));
+			TEXTURES.put(filepath, texture);
+			return texture;
+		} catch (IOException e) {
+			Log.error(e);
+		}
+
+		return null;
+	}
+
+	public static Clip loadSound(String filepath) {
+		if (SOUNDS.containsKey(filepath))
+			return SOUNDS.get(filepath);
+
+        try {
+            AudioInputStream in = AudioSystem.getAudioInputStream(new File(filepath));
+			AudioFormat format = in.getFormat();
+
+			DataLine.Info info = new DataLine.Info(Clip.class, format);
+			Clip sound = (Clip) AudioSystem.getLine(info);
+			sound.open(in);
+			SOUNDS.put(filepath, sound);
+			return sound;
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+			Log.error(e);
+		}
 
 		return null;
     }
