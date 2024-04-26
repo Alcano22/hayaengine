@@ -56,7 +56,9 @@ public class Window extends JFrame {
             return;
         }
 
-        Graphics gfx = bs.getDrawGraphics();
+        Graphics2D gfx = (Graphics2D) bs.getDrawGraphics();
+        gfx.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
+        gfx.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
 
         try {
             gfx.setColor(Color.BLACK);

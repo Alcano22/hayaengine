@@ -13,11 +13,6 @@ public class TilemapRenderer extends Component {
     public boolean center = false, stretch = false;
 
     @Override
-    public void update() {
-        this.transform().position().x += 1f;
-    }
-
-    @Override
     public void render(Graphics gfx) {
         Window window = Engine.get().window;
         if (this.stretch) {

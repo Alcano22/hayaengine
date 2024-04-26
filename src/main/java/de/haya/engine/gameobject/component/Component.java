@@ -28,4 +28,8 @@ public abstract class Component {
         return this.scene().camera;
     }
 
+    public <T extends Component> T getComponent(Class<T> componentClass) {
+        return this.gameObject.getComponent(componentClass);
+    }
+
 }

@@ -1,6 +1,7 @@
 package de.haya.engine.resources;
 
 import de.haya.engine.logging.Log;
+import de.haya.engine.sound.Sound;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
@@ -76,7 +77,7 @@ public final class AssetPool {
 		return null;
 	}
 
-	public static Clip loadSound(String filepath) {
+	public static Clip loadAudio(String filepath) {
 		if (SOUNDS.containsKey(filepath))
 			return SOUNDS.get(filepath);
 
@@ -95,5 +96,9 @@ public final class AssetPool {
 
 		return null;
     }
+
+	public static Sound loadSound(String filepath) {
+		return new Sound(loadAudio(filepath));
+	}
 
 }
