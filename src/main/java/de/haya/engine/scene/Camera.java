@@ -13,11 +13,18 @@ public class Camera {
         this.pixelsPerUnit = pixelsPerUnit;
     }
 
-    public Vector2i translate(Vector2f worldPos) {
-        worldPos.mul(this.pixelsPerUnit).sub(this.position);
-        int screenX = (int) worldPos.x;
-        int screenY = (int) worldPos.y;
+    public Vector2i worldToScreenPoint(Vector2f worldPos) {
+        Vector2f translatedPos = new Vector2f(worldPos).mul(this.pixelsPerUnit).sub(this.position);
+        int screenX = (int) translatedPos.x;
+        int screenY = (int) translatedPos.y;
         return new Vector2i(screenX, screenY);
+    }
+
+    public Vector2i worldToScreenScale(Vector2f worldScale) {
+        Vector2f translatedScale = new Vector2f(worldScale).mul(this.pixelsPerUnit);
+        int screenScaleX = (int) translatedScale.x;
+        int screenScaleY = (int) translatedScale.y;
+        return new Vector2i(screenScaleX, screenScaleY);
     }
 
 }

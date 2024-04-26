@@ -4,25 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35ccc8ec-76c9-493f-b085-3ea4f3f82ff9" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/api/WindowProps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/gameobject/component/SpriteRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/resources/AssetPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/window/WindowDebugInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="74e06cf3-e603-4ac8-82aa-6254fc7fcc4d" name="Changes" comment="Input System">
+      <change afterPath="$PROJECT_DIR$/assets/fonts/roboto-mono.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/api/GameAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/api/GameAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/core/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/core/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/core/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/gameobject/component/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/gameobject/component/Component.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/gameobject/component/TilemapRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/gameobject/component/TilemapRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/gameobject/component/SpriteRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/gameobject/component/SpriteRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/resources/AssetPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/resources/AssetPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/scene/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/scene/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/scene/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/scene/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/tilemap/Tilemap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/scene/Tilemap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/util/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/util/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/window/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/window/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/haya/engine/window/WindowDebugInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/haya/engine/window/WindowDebugInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +33,29 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hayaengine" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hayaengine" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hayaengine" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hayaengine" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -53,6 +66,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -60,10 +75,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2fWK4LGR65LUEwho37UoHkL6EM8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectId" id="2fY2oU3mNYifSgOnw0AEh19aAVG" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -71,17 +86,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Build TheLegendOfYan.executor": "Run",
-    "Gradle.TheLegendOfYan [clean].executor": "Run",
-    "Gradle.TheLegendOfYan [jar].executor": "Run",
-    "Gradle.TheLegendOfYan [processResources].executor": "Run",
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.HayaEngine [assembleDist].executor": "Run",
+    "Gradle.HayaEngine [clean].executor": "Run",
+    "Gradle.HayaEngine [installDist].executor": "Run",
+    "Gradle.HayaEngine [jar].executor": "Run",
+    "Gradle.HayaEngine [publishToMavenLocal].executor": "Run",
     "Gradle.TheLegendOfYan [run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Java/HayaEngine",
+    "last_opened_file_path": "D:/Java/HayaEngine",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,12 +108,42 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.hayaengine [publishToMavenLocal]">
-    <configuration name="TheLegendOfYan [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\Java\TheLegendOfYan\assets\textures\tilesets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java\HayaEngine\assets\fonts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.HayaEngine [publishToMavenLocal]">
+    <configuration name="HayaEngine [assembleDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assembleDist" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="HayaEngine [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -117,7 +165,29 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TheLegendOfYan [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="HayaEngine [installDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="installDist" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="HayaEngine [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,51 +209,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TheLegendOfYan [processResources]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="processResources" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="TheLegendOfYan [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="hayaengine [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="HayaEngine [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -207,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.hayaengine [publishToMavenLocal]" />
-        <item itemvalue="Gradle.TheLegendOfYan [run]" />
-        <item itemvalue="Gradle.TheLegendOfYan [jar]" />
-        <item itemvalue="Gradle.TheLegendOfYan [clean]" />
-        <item itemvalue="Gradle.TheLegendOfYan [processResources]" />
+        <item itemvalue="Gradle.HayaEngine [publishToMavenLocal]" />
+        <item itemvalue="Gradle.HayaEngine [clean]" />
+        <item itemvalue="Gradle.HayaEngine [installDist]" />
+        <item itemvalue="Gradle.HayaEngine [assembleDist]" />
+        <item itemvalue="Gradle.HayaEngine [jar]" />
       </list>
     </recent_temporary>
   </component>
@@ -225,34 +251,26 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="35ccc8ec-76c9-493f-b085-3ea4f3f82ff9" name="Changes" comment="" />
-      <created>1713911202572</created>
+      <changelist id="74e06cf3-e603-4ac8-82aa-6254fc7fcc4d" name="Changes" comment="" />
+      <created>1713963865807</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713911202572</updated>
-      <workItem from="1713911203688" duration="4447000" />
-      <workItem from="1713938131613" duration="7215000" />
-      <workItem from="1713947964710" duration="4514000" />
-      <workItem from="1714067020009" duration="10102000" />
+      <updated>1713963865807</updated>
+      <workItem from="1713963866878" duration="10728000" />
+      <workItem from="1713974981583" duration="60000" />
+      <workItem from="1713982873263" duration="14742000" />
+      <workItem from="1714022723184" duration="146000" />
+      <workItem from="1714024548162" duration="7741000" />
+      <workItem from="1714038462730" duration="9007000" />
+      <workItem from="1714063772273" duration="804000" />
+      <workItem from="1714116827019" duration="5529000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

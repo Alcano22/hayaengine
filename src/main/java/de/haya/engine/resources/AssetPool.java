@@ -2,7 +2,9 @@ package de.haya.engine.resources;
 
 import de.haya.engine.logging.Log;
 
+import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +12,7 @@ import java.util.Map;
 public final class AssetPool {
 
 	private static final Map<String, File> FILES = new HashMap<>();
+	private static final Map<String, Font> FONTS = new HashMap<>();
 
 	private AssetPool() {}
 
@@ -36,5 +39,21 @@ public final class AssetPool {
 
 		return null;
 	}
+
+	public static Font loadTTFFont(String filepath) {
+		if (FONTS.containsKey(filepath))
+			return FONTS.get(filepath);
+
+        try {
+            Font font = Font.createFont(Font.TRUETYPE_FONT, new File(filepath));
+			GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
+			FONTS.put(filepath, font);
+			return font;
+        } catch (FontFormatException | IOException e) {
+            Log.error(e);
+        }
+
+		return null;
+    }
 
 }

@@ -9,7 +9,7 @@ public final class Time {
     private Time() {}
 
     public static float getTime() {
-        return (System.nanoTime() - START_TIME) / 1E-9f;
+        return (System.nanoTime() - START_TIME) * 1E-9f;
     }
 
     public static int getFPS() {

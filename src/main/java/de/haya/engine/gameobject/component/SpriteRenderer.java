@@ -14,10 +14,10 @@ public class SpriteRenderer extends Component {
 	public void render(Graphics gfx) {
 		Camera cam = this.camera();
 
-		Vector2i screenPos = cam.translate(this.transform().position());
-		Vector2f scale = this.transform().scale();
+		Vector2i screenPos = cam.worldToScreenPoint(this.transform().position());
+		Vector2i screenScale = cam.worldToScreenScale(this.transform().scale());
 
 		gfx.setColor(this.color);
-		gfx.fillRect(screenPos.x, screenPos.y, (int) (scale.x * 32f), (int) (scale.y * 32f));
+		gfx.fillRect(screenPos.x, screenPos.y, screenScale.x, screenScale.y);
 	}
 }

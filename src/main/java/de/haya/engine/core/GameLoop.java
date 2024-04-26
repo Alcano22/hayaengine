@@ -36,25 +36,36 @@ public class GameLoop {
     }
 
     public synchronized void loop() {
-        float drawInterval = 1f / this.targetFPS;
-        float last = Time.getTime();
-        float current;
-        float deltaTime = 0f;
+        float interval = 1f / (float) targetFPS;
+        float accumulator = 0f;
+        float currentTime = Time.getTime();
+        float frameTime;
 
         while (this.running) {
-            current = Time.getTime();
-            deltaTime += (current - last) / drawInterval;
-            last = current;
+            float newTime = Time.getTime();
+            frameTime = newTime - currentTime;
+            currentTime = newTime;
 
-            Time.deltaTime = deltaTime;
+            accumulator += frameTime;
 
-            if (deltaTime >= 1f) {
+            while (accumulator >= interval) {
+                Time.deltaTime = interval;
                 this.engine.update();
-                this.engine.render();
-                deltaTime--;
+                accumulator -= interval;
+            }
+
+            this.engine.render();
+
+            if (limitFPS) {
+                float sleepTime = interval - (Time.getTime() - currentTime);
+                if (sleepTime > 0f) {
+                    try {
+                        Thread.sleep((long) (sleepTime * 1000f));
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
             }
         }
-
-        this.stop();
     }
 }
